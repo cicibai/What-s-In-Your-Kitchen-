@@ -3,6 +3,21 @@
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
+.header{
+  text-align: center;
+  width: 1000px;
+  height: 114px;
+  left: 250px;
+  top: 0px;
+  font-family: Didot;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 80px;
+  line-height: 101px;
+
+  color: #000000;
+}
+
 .search-form{
   min-height: 10vh;
   display: flex;
