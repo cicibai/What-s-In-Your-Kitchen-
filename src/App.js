@@ -3,56 +3,6 @@ import Recipe from "./Recipe";
 import "./App.css";
 
 const App = () => {
-<<<<<<< HEAD
-    const APP_ID = '9d6f1293';
-    const APP_KEY = 'dbd604ae3d8e49c1c78890586e39d73d';
-
-    const [recipes, setRecipes] = useState([]);
-    const [search, setSearch] = useState('');
-    const [query, setQuery] = useState('chicken');
-
-    useEffect(()=> {
-        getRecipes();
-    },[query]);
-
-    const getRecipes = async () => {
-      const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
-      const data = await response.json();
-      setRecipes(data.hits);
-    }
-
-    const updateSearch = e => {
-      setSearch(e.target.value);
-    }
-
-    const getSearch = e => {
-      e.preventDefault();
-      setQuery(search);
-      setSearch('');
-    }
-
-    return (
-        <div className="App">
-          <header className="header">So What's In The Kitchen?</header>
-            <form onSubmit={getSearch} className="search-form">
-                <input className="search-bar" type="text" value={search} onChange={updateSearch} />
-                <button className="search-button" type="submit">
-                  Search
-                </button>
-            </form>
-            <div className="recipes">
-            {recipes.map(recipe => (
-              <Recipe 
-              key={recipe.recipe.label}
-              title={recipe.recipe.label} 
-              image={recipe.recipe.image}
-              ingredients={recipe.recipe.ingredients}    
-              url={recipe.recipe.url}         
-              />
-            ))}
-            </div>            
-        </div>
-=======
   const APP_ID = "9d6f1293";
   const APP_KEY = "dbd604ae3d8e49c1c78890586e39d73d";
 
@@ -67,7 +17,6 @@ const App = () => {
   const getRecipes = async () => {
     const response = await fetch(
       `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
->>>>>>> 07389bd5e6f1d5207bd4d4487f3765ceae224952
     );
     const data = await response.json();
     setRecipes(data.hits);
@@ -139,6 +88,7 @@ const App = () => {
             title={recipe.recipe.label}
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
+            url={recipe.recipe.ingredients}
           />
         ))}
       </div>
