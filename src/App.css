@@ -1,6 +1,6 @@
 .App {
   min-height: 100vh;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-color: #e2ebf0;
 }
 
 .search-form{
@@ -10,17 +10,42 @@
   align-items: center;
 }
 
-.search-bar{
-  width: 50%;
+.search-container {
+  display: block;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+  padding-top: 250px;
+}
+
+input{
+  background-color: #e2ebf0;
+  display: flex;
+  justify-content: center;
+  font-family: Didot;
+  font-size: 50px;
+  line-height: 100%;
   border: none;
-  padding: 10px;
+  border-bottom: 1px solid #000000;
+  line-height: 0;
+  display: block;
+  width: 800px;
+  min-height: 80px;
 }
 
 .search-button{
-  background: lightblue;
+  background: #e2ebf0;
   border: none;
-  padding: 10px 20px;
-  color: white;
+  font-family: Didot;
+  font-size: 50px;
+  min-height: 100px;
+  height: 100px;
+  display: flex;
+  padding-top: 50px;
+  padding-left: 40%;
+  padding-bottom: 20%;
 }
 
 .recipes {
@@ -28,3 +53,33 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
+.question {
+  position: absolute;
+  width: 1000px;
+  height: 100px;
+  left: 250px;
+  top: 0px;
+  font-family: Didot;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 101px;
+
+  color: #000000;
+}
+
+p1{
+  position: absolute;
+  width: 1000px;
+  height: 100px;
+  left: 150px;
+  top: 140px;
+  font-family: Didot;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  color: #000000;
+}
+
+
