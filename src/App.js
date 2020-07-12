@@ -10,9 +10,12 @@ const App = () => {
   const [search, setSearch] = useState("");
   const [search2, setSearch2] = useState("");
   const [search3, setSearch3] = useState("");
+  const [search4, setSearch4] = useState("");
+  const [search5, setSearch5] = useState("");
   const [query, setQuery] = useState("");
-  const searches = [];
+  var searches = [];
   var searchString = "";
+  var count = 0;
 
   useEffect(() => {
     getRecipes();
@@ -27,17 +30,25 @@ const App = () => {
     setRecipes(data.hits);
   };
 
-  //This causes all of the search bars to update to the same thing
+  //This is too redundant look for a better strategy
   const updateSearch = (e) => {
     setSearch(e.target.value);
   };
 
-  const newSearch = e => {
+  const newSearch2 = e => {
     setSearch2(e.target.value);
   }
 
-  const anotherSearch = e => {
+  const newSearch3 = e => {
     setSearch3(e.target.value);
+  }
+
+  const newSearch4 = e => {
+    setSearch4(e.target.value);
+  }
+
+  const newSearch5 = e => {
+    setSearch5(e.target.value);
   }
 
   const getSearch = (e) => {
@@ -45,13 +56,28 @@ const App = () => {
     searches.push(search);
     searches.push(search2);
     searches.push(search3);
+    searches.push(search4);
+    searches.push(search5);
     searchString = searches.map(search => search + '%2C');
     setQuery(searchString);
     setSearch("");
     setSearch2("");
     setSearch3("");
+    setSearch4("");
+    setSearch5("");
   };
 
+  // function getMissingIngredients(ingredients) {
+  //   searches.forEach(compareLists);
+  // }
+
+  // function compareLists(input) {
+  //   ingredients.forEach(compare => {
+  //     if (item.text.equals(input) == false) {
+  //       count = count + 1;
+  //     }
+  //   })
+  // }
   
 
   return ( 
@@ -70,28 +96,28 @@ const App = () => {
           type="text"
           placeholder="b"
           value={search2}
-          onChange={newSearch}
+          onChange={newSearch2}
         /> 
         <input
           className="third-ing"
           type="text"
           placeholder="c"
           value={search3}
-          onChange={anotherSearch}
+          onChange={newSearch3}
         /> 
         <input
           className="fourth-ing"
           type="text"
           placeholder="d"
-          //value={search}
-          //onChange={updateSearch}
+          value={search4}
+          onChange={newSearch4}
         /> 
         <input
           className="fifth-ing"
           type="text"
           placeholder="e"
-          //value={search}
-          //onChange={updateSearch}
+          value={search5}
+          onChange={newSearch5}
         /> 
 
         <button className="search-button" type="submit">
@@ -110,6 +136,7 @@ const App = () => {
             ingredients={recipe.recipe.ingredients}
             url={recipe.recipe.url}
           />
+          // getMissingIngredients(recipe.recipe.ingredients)
         ))}
       </div>
 

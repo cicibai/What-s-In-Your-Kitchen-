@@ -11,6 +11,13 @@ const Recipe = ({title,image, ingredients, url}) => {
                     <li>{ingredient.text}</li>
                 ))}
             </o1>
+            {/* <script> 
+                {ingredients.map(ingredient => (
+                    if (searches.includes(ingredient.text) == false) {
+                        count = count + 1
+                    }
+                ))}
+            </script> */}
             
             <img src={image} alt=""/>
             <h4><a href={url}>Click for full recipe</a></h4>
