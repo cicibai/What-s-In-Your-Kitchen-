@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import "./App.css";
 
+import {createBrowserHistory} from 'history';
+const browserHistory = createBrowserHistory();
+
+
+
 const App = () => {
   const APP_ID = "9d6f1293";
   const APP_KEY = "dbd604ae3d8e49c1c78890586e39d73d";
@@ -120,7 +125,10 @@ const App = () => {
           onChange={newSearch5}
         /> 
 
-        <button className="search-button" type="submit">
+        <button
+        className="search-button"
+        type="submit"
+        onClick={() => browserHistory.push('/Recipes')}>
           Search
         </button>
 
