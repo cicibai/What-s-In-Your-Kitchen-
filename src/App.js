@@ -144,7 +144,7 @@ const App = () => {
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
             url={recipe.recipe.url}
-            searches = {searches}
+            searchString = {searchString}
             // searchedIngredient={ingredients.map(((ingredient) => {
             //   if (searches.includes(ingredient)) {
             //       count += 1;
