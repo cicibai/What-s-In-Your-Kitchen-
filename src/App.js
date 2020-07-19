@@ -82,6 +82,7 @@ const App = () => {
   //       count = count + 1;
   //     }
   //   })
+  //   return count;
   // }
   
 
@@ -143,8 +144,14 @@ const App = () => {
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
             url={recipe.recipe.url}
+            searches = {searches}
+            // searchedIngredient={ingredients.map(((ingredient) => {
+            //   if (searches.includes(ingredient)) {
+            //       count += 1;
+            //   }
+            // }))
+            //}
           />
-          // getMissingIngredients(recipe.recipe.ingredients)
         ))}
       </div>
 
