@@ -20,7 +20,6 @@ const App = () => {
   const [query, setQuery] = useState("");
   var searches = [];
   var searchString = "";
-  var count = 0;
 
   useEffect(() => {
     getRecipes();
@@ -71,20 +70,6 @@ const App = () => {
     setSearch4("");
     setSearch5("");
   };
-
-  // function getMissingIngredients(ingredients) {
-  //   searches.forEach(compareLists);
-  // }
-
-  // function compareLists(input) {
-  //   ingredients.forEach(compare => {
-  //     if (item.text.equals(input) == false) {
-  //       count = count + 1;
-  //     }
-  //   })
-  //   return count;
-  // }
-  
 
   return ( 
     <div className="App">
@@ -144,13 +129,6 @@ const App = () => {
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
             url={recipe.recipe.url}
-            searchString = {searchString}
-            // searchedIngredient={ingredients.map(((ingredient) => {
-            //   if (searches.includes(ingredient)) {
-            //       count += 1;
-            //   }
-            // }))
-            //}
           />
         ))}
       </div>
