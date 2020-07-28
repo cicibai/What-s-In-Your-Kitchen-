@@ -75,7 +75,7 @@ const App = () => {
     setSearch5("");
     var Scroll = require('react-scroll');
     var scroll = Scroll.animateScroll;
-    scroll.scrollTo(880);
+    scroll.scrollTo(888);
 
   };
 
