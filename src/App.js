@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import "./App.css";
 
-import {createBrowserHistory} from 'history';
-const browserHistory = createBrowserHistory();
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
 
+import Route from "react-router-dom/Route";
 
+import { ScrollTo, ScrollArea } from "react-scroll-to";
 
 const App = () => {
   const APP_ID = "9d6f1293";
@@ -70,6 +73,10 @@ const App = () => {
     setSearch3("");
     setSearch4("");
     setSearch5("");
+    var Scroll = require('react-scroll');
+    var scroll = Scroll.animateScroll;
+    scroll.scrollTo(880);
+
   };
 
   // function getMissingIngredients(ingredients) {
@@ -87,7 +94,19 @@ const App = () => {
 
   return ( 
     <div className="App">
-      <form onSubmit={getSearch} className="search-form">
+        <div className="question">
+            <h1>
+                So What’s in the Kitchen?
+            </h1>
+
+            <p1>
+                Tell us five ingredients you want to use up!
+            </p1>
+          </div>
+
+
+      <form
+      onSubmit={getSearch} className="search-form">
         <div class="search-container">
         <input
           className="first-ing"
@@ -125,14 +144,19 @@ const App = () => {
           onChange={newSearch5}
         /> 
 
-        <button
-        className="search-button"
-        type="submit"
-        onClick={() => browserHistory.push('/Recipes')}>
-          Search
-        </button>
-
-        </div>
+      {/* <ScrollTo>
+        {({ scroll }) => (
+            <ScrollArea id="foo"> */}
+              <button 
+              className="search-button"
+              type="submit">
+              {/* onSubmit={() => scroll({ id: "foo", y: 500 })}> */}
+                Search
+              </button>
+            {/* </ScrollArea>
+        )}
+      </ScrollTo> */}
+      </div>
       </form>
 
       <div className="recipes">
@@ -146,16 +170,6 @@ const App = () => {
           />
           // getMissingIngredients(recipe.recipe.ingredients)
         ))}
-      </div>
-
-      <div className="question">
-            <h1>
-                So What’s in the Kitchen?
-            </h1>
-
-            <p1>
-                Tell us five ingredients you want to use up!
-            </p1>
       </div>
     </div>
   );
