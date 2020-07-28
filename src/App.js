@@ -23,7 +23,6 @@ const App = () => {
   const [query, setQuery] = useState("");
   var searches = [];
   var searchString = "";
-  var count = 0;
 
   useEffect(() => {
     getRecipes();
@@ -78,19 +77,6 @@ const App = () => {
     scroll.scrollTo(888);
 
   };
-
-  // function getMissingIngredients(ingredients) {
-  //   searches.forEach(compareLists);
-  // }
-
-  // function compareLists(input) {
-  //   ingredients.forEach(compare => {
-  //     if (item.text.equals(input) == false) {
-  //       count = count + 1;
-  //     }
-  //   })
-  // }
-  
 
   return ( 
     <div className="App">
@@ -168,7 +154,6 @@ const App = () => {
             ingredients={recipe.recipe.ingredients}
             url={recipe.recipe.url}
           />
-          // getMissingIngredients(recipe.recipe.ingredients)
         ))}
       </div>
     </div>
