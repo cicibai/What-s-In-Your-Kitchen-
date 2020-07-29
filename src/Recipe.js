@@ -3,14 +3,17 @@ import style from './recipe.module.css';
 import './App.js';
 
 
-const Recipe = ({title,image, ingredients, url}) => {
+const Recipe = ({title,image, ingredients, url, history}) => {
     return(
         <div className={style.recipe}>
             <h1>{title}</h1>
             <o1>
-                {ingredients.map((ingredient) => (
-                    //the ingredient needs to include the entire string given to it
-                    (ingredient.text.includes(title.substr(0, title.indexOf(" ")).toLowerCase()) ? <li><b>{ingredient.text}</b></li> : <li>{ingredient.text}</li>)
+                {history.split(",").map(item => (
+                    ingredients.map((ingredient) => (
+                        //USE FILTER!!!
+                         (ingredient.text.includes(item.toLowerCase()) ? <li><b>{ingredient.text}</b></li> : console.log("Doesn't match"))
+                    ))
+                   
                 ))}
             </o1>
             <img src={image} alt=""/>

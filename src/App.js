@@ -65,7 +65,8 @@ const App = () => {
     searches.push(search3);
     searches.push(search4);
     searches.push(search5);
-    searchString = searches.map(search => search + '%2C');
+    //searchString = searches.map(search => search + '%2C');
+    searchString = searches.toString();
     setQuery(searchString);
     setSearch("");
     setSearch2("");
@@ -153,6 +154,7 @@ const App = () => {
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
             url={recipe.recipe.url}
+            history={query}
           />
         ))}
       </div>
