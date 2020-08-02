@@ -4,7 +4,7 @@ import './App.js';
 
 
 const Recipe = ({title,image, ingredients, url, history}) => {
-    var requiredIngredients = [];
+    var hasIngredient = [];
     return(
         <div className={style.recipe}>
             <h1>{title}</h1>
@@ -12,10 +12,13 @@ const Recipe = ({title,image, ingredients, url, history}) => {
                 {history.split(",").map(item => (
                     (item === "" ? console.log("Empty string") : 
                     ingredients.map((ingredient) => (
-                         (ingredient.text.includes(item.toLowerCase()) ? <li><b>{ingredient.text}</b></li> : checkArray(requiredIngredients, ingredient.text))
+                         (ingredient.text.includes(item.toLowerCase()) ? checkArray(hasIngredient, ingredients, ingredient) : null)
                     )))))}
-                    {requiredIngredients.map(requiredIngredient => 
-                        <li>{requiredIngredient}</li>)}
+                    {hasIngredient.map(ingredient => 
+                        <li><b>{ingredient}</b></li>)}
+
+                    {ingredients.map(ingredient => 
+                        <li>{ingredient.text}</li>)}
             </ul>
             <img src={image} alt=""/>
             <h4><a href={url}>Click for full recipe</a></h4>
@@ -24,10 +27,19 @@ const Recipe = ({title,image, ingredients, url, history}) => {
     )
 }
 
-function checkArray(ingreList, ing) {
-    if (!ingreList.includes(ing)) {
-        ingreList.push(ing)
+function checkArray(ingreList, fullList, ing) {
+    if (!ingreList.includes(ing.text)) {
+        ingreList.push(ing.text)
+    }
+    removeItem(fullList, ing)
+}
+
+function removeItem(ingredientList, ingre) {
+    const index = ingredientList.indexOf(ingre);
+    if (index > -1) {
+        ingredientList.splice(index, 1)
     }
 }
+
 
 export default Recipe;
