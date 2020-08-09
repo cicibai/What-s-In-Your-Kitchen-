@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import Recipe from "./Recipe";
 import "./App.css";
 
-import {
-  BrowserRouter as Router,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+// } from "react-router-dom";
 
-import Route from "react-router-dom/Route";
+// import Route from "react-router-dom/Route";
 
 import { ScrollTo, ScrollArea } from "react-scroll-to";
 
