@@ -1,5 +1,5 @@
-## What's In Your Kitchen
-What's In Your Kitchen is a web application that takes the ingredients a user currently has and finds recipes with those ingredients. This idea was born after two friends were struggling to find new recipes to make. This program simplifies that problem as the API takes the inputted ingredients and outputs only recipes with those ingredients. 
+## What's In Your Kitchen?
+What's In Your Kitchen? is a web application that takes the ingredients a user currently has and finds recipes with those ingredients. This idea was born after two friends were struggling to find new recipes to make. This program simplifies that problem as the API takes the inputted ingredients and outputs only recipes with those ingredients. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
